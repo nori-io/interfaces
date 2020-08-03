@@ -16,7 +16,7 @@ type Cache interface {
 	Clear() error
 	Delete(key []byte) error
 	Get(key []byte) ([]byte, error)
-	Set(key []byte, value []byte, _ time.Duration) error
+	Set(key []byte, value []byte, ttl time.Duration) error
 }
 
 func GetCache(r plugin.Registry) (Cache, error) {
