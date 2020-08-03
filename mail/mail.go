@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	MailInterface meta.Interface = "nori/cache/Mail@1.0.0"
+	MailInterface meta.Interface = "nori/mail/Mail@1.0.0"
 )
 
 type Mail interface {
