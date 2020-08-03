@@ -1,4 +1,4 @@
-module nori-io/interfaces/mail
+module  github.com/nori-io/interfaces/mail
 
 go 1.14
 

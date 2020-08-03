@@ -1,4 +1,4 @@
-module nori-io/interfaces/cache
+module  github.com/nori-io/interfaces/cache
 
 go 1.14
 
