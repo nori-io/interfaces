@@ -14,13 +14,18 @@ const (
 	AuthTokenContextKey                = "nori.auth.token"
 	)
 
+type AccessTokener interface {
+	GetAccessToken() string
+}
+
+
 type BeforeFunc func(context.Context, *http.Request) context.Context
 
 type ServerAfterFunc func(context.Context, http.ResponseWriter) context.Context
 
 type Transport interface {
 	ToContext() BeforeFunc
-	ToTransport(ctx context.Context, w http.ResponseWriter /*at interfaces.AccessTokener*/) ServerAfterFunc
+	ToTransport(ctx context.Context, w http.ResponseWriter, at AccessTokener) ServerAfterFunc
 }
 
 func GetTransport(r plugin.Registry) (Transport, error) {
