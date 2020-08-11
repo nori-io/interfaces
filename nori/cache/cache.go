@@ -6,10 +6,15 @@ import (
 	"github.com/nori-io/common/v3/errors"
 	"github.com/nori-io/common/v3/meta"
 	"github.com/nori-io/common/v3/plugin"
+	e "errors"
 )
 
 const (
 	CacheInterface meta.Interface = "nori/cache/Cache@1.0.0"
+)
+
+var (
+	CacheKeyNotFound=e.New("CacheKeyNotFound")
 )
 
 type Cache interface {
