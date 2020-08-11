@@ -11,7 +11,8 @@ import (
 
 const (
 	TransportInterface meta.Interface = "nori/http/Transport@1.0.0"
-)
+	AuthTokenContextKey                = "nori.auth.token"
+	)
 
 type BeforeFunc func(context.Context, *http.Request) context.Context
 
