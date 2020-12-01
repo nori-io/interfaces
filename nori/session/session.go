@@ -2,15 +2,16 @@ package session
 
 import (
 	"context"
-	"github.com/nori-io/common/v3/endpoint"
-	"github.com/nori-io/common/v3/errors"
-	"github.com/nori-io/common/v3/meta"
-	"github.com/nori-io/common/v3/plugin"
 	"time"
+
+	"github.com/nori-io/common/v3/pkg/domain/endpoint"
+	"github.com/nori-io/common/v3/pkg/domain/meta"
+	"github.com/nori-io/common/v3/pkg/domain/registry"
+	"github.com/nori-io/common/v3/pkg/errors"
 )
 
 const (
-	SessionInterface meta.Interface = "nori/session/Session@1.0.0"
+	SessionInterface    meta.Interface = "nori/session/Session@1.0.0"
 	SessionIdContextKey                = "nori.session.id"
 )
 
@@ -22,7 +23,7 @@ type Session interface {
 	Verify() endpoint.Middleware
 }
 
-func GetSession(r plugin.Registry) (Session, error) {
+func GetSession(r registry.Registry) (Session, error) {
 	instance, err := r.Interface(SessionInterface)
 	if err != nil {
 		return nil, err

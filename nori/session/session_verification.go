@@ -4,12 +4,12 @@ type SessionVerification int
 
 const (
 	NoVerify SessionVerification = iota
-	WhiteList
-	BlackList
+	AllowList
+	DenyList
 )
 
 var sessionVerificationNames = [...]string{
 	"NoVerify",
-	"WhiteList",
-	"BlackList",
+	"AllowList",
+	"DenyList",
 }

@@ -1,12 +1,21 @@
 package session
 
-type State string
+type State uint8
 
 const (
-	SessionActive  State = "active"
-	SessionClosed  State = "closed"
-	SessionLocked  State = "locked"
-	SessionBlocked State = "blocked"
-	SessionExpired State = "expired"
-	SessionError   State = "error"
+	SessionClosed State = iota
+	SessionActive
+	SessionLocked
+	SessionBlocked
+	SessionExpired
+	SessionError
 )
+
+var states = []string{"active", "closed", "locked", "blocked", "expired", "error"}
+
+func (s State) String() string {
+	if len(states) < int(s) {
+		return ""
+	}
+	return states[s]
+}
