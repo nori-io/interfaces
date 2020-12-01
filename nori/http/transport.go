@@ -4,9 +4,9 @@ import (
 	"context"
 	"net/http"
 
-	"github.com/nori-io/common/v3/errors"
-	"github.com/nori-io/common/v3/meta"
-	"github.com/nori-io/common/v3/plugin"
+	"github.com/nori-io/common/v3/pkg/errors"
+	"github.com/nori-io/common/v3/pkg/domain/meta"
+	"github.com/nori-io/common/v3/pkg/domain/registry"
 )
 
 const (
@@ -28,7 +28,7 @@ type Transport interface {
 	ToTransport(ctx context.Context, w http.ResponseWriter, at AccessTokener) ServerAfterFunc
 }
 
-func GetTransport(r plugin.Registry) (Transport, error) {
+func GetTransport(r registry.Registry) (Transport, error) {
 	instance, err := r.Interface(TransportInterface)
 	if err != nil {
 		return nil, err
