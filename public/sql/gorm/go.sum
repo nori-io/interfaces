@@ -26,6 +26,8 @@ github.com/mattn/go-sqlite3 v1.14.0 h1:mLyGNKR8+Vv9CAU7PphKa2hkEqxxhn8i32J6FPj1/
 github.com/mattn/go-sqlite3 v1.14.0/go.mod h1:JIl7NbARA7phWnGvh0LKTyg7S9BA+6gx71ShQilpsus=
 github.com/nori-io/common/v3 v3.0.0-20201124183231-795113bbd474 h1:x706sUojg1Rv+d35FyBvWr/aCkutGkjX5pir4fAPKxk=
 github.com/nori-io/common/v3 v3.0.0-20201124183231-795113bbd474/go.mod h1:a/ICgA6b3A3x8HlNDSe9z6HCNiFvuvZJhZP78rzX0ME=
+github.com/nori-io/common/v3 v3.0.0-20201201061338-be5c0cbe7d28 h1:7qLHgsyMPYVV5OraboCV34vtt4Fr88DOkPNGZJEb08g=
+github.com/nori-io/common/v3 v3.0.0-20201201061338-be5c0cbe7d28/go.mod h1:a/ICgA6b3A3x8HlNDSe9z6HCNiFvuvZJhZP78rzX0ME=
 github.com/nori-io/common/v3 v3.0.0 h1:5Qa40t9EL1tqD1j8RgK9fOI/ydMqhVoZYZZVGFo64I8=
 github.com/nori-io/common/v3 v3.0.0/go.mod h1:xWpo27B7goqoWOSIEt/FZnxDaWhBkzowQ625/whGT80=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
