@@ -1,4 +1,4 @@
-module github.com/nori-io/interfaces/public/sql/pg
+module github.com/nori-io/interfaces/database/orm/pg
 
 go 1.15
 

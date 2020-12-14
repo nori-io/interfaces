@@ -1,4 +1,4 @@
-module github.com/nori-io/interfaces/public/sql/gorm
+module github.com/nori-io/interfaces/database/orm/gorm
 
 go 1.15
 
