@@ -1,11 +1,11 @@
 package http
 
 import (
-	"github.com/nori-io/common/v3/pkg/domain/registry"
-	"github.com/nori-io/common/v3/pkg/errors"
 	"net/http"
 
-	"github.com/nori-io/common/v3/pkg/domain/meta"
+	"github.com/nori-io/common/v4/pkg/domain/meta"
+	"github.com/nori-io/common/v4/pkg/domain/registry"
+	"github.com/nori-io/common/v4/pkg/errors"
 )
 
 const HttpInterface meta.Interface = "nori/http/HTTP"

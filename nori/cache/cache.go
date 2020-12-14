@@ -3,10 +3,11 @@ package cache
 import (
 	"time"
 
-	"github.com/nori-io/common/v3/errors"
-	"github.com/nori-io/common/v3/meta"
-	"github.com/nori-io/common/v3/plugin"
 	e "errors"
+
+	"github.com/nori-io/common/v4/pkg/domain/meta"
+	"github.com/nori-io/common/v4/pkg/domain/registry"
+	"github.com/nori-io/common/v4/pkg/errors"
 )
 
 const (
@@ -14,7 +15,7 @@ const (
 )
 
 var (
-	CacheKeyNotFound=e.New("CacheKeyNotFound")
+	CacheKeyNotFound = e.New("CacheKeyNotFound")
 )
 
 type Cache interface {
@@ -24,7 +25,7 @@ type Cache interface {
 	Set(key []byte, value []byte, ttl time.Duration) error
 }
 
-func GetCache(r plugin.Registry) (Cache, error) {
+func GetCache(r registry.Registry) (Cache, error) {
 	instance, err := r.Interface(CacheInterface)
 	if err != nil {
 		return nil, err
@@ -37,4 +38,3 @@ func GetCache(r plugin.Registry) (Cache, error) {
 	}
 	return i, nil
 }
-

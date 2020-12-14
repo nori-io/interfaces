@@ -1,10 +1,9 @@
 package mail
 
 import (
-
-	"github.com/nori-io/common/v3/errors"
-	"github.com/nori-io/common/v3/meta"
-	"github.com/nori-io/common/v3/plugin"
+	"github.com/nori-io/common/v4/pkg/domain/meta"
+	"github.com/nori-io/common/v4/pkg/domain/registry"
+	"github.com/nori-io/common/v4/pkg/errors"
 )
 
 const (
@@ -20,7 +19,7 @@ type Mail interface {
 	Send(msg interface{}) error
 }
 
-func GetMail(r plugin.Registry) (Mail, error) {
+func GetMail(r registry.Registry) (Mail, error) {
 	instance, err := r.Interface(MailInterface)
 	if err != nil {
 		return nil, err

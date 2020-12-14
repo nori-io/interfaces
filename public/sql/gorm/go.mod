@@ -1,9 +1,8 @@
 module github.com/nori-io/interfaces/public/sql/gorm
 
-go 1.14
+go 1.15
 
 require (
-	github.com/Masterminds/semver/v3 v3.0.3 // indirect
 	github.com/jinzhu/gorm v1.9.15
-	github.com/nori-io/common/v3 v3.0.0-20201208070558-ad51274ec7be
+	github.com/nori-io/common/v4 v4.0.0
 )

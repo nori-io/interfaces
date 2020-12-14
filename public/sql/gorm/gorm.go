@@ -2,10 +2,9 @@ package pg
 
 import (
 	"github.com/jinzhu/gorm"
-	"github.com/nori-io/common/v3/pkg/domain/meta"
-	"github.com/nori-io/common/v3/pkg/errors"
-	"github.com/nori-io/common/v3/pkg/domain/registry"
-
+	"github.com/nori-io/common/v4/pkg/domain/meta"
+	"github.com/nori-io/common/v4/pkg/domain/registry"
+	"github.com/nori-io/common/v4/pkg/errors"
 )
 
 const (
