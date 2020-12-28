@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	GormInterface meta.Interface = "database/gorm/Gorm@v1.9.15"
+	GormInterface meta.Interface = "database/gorm/Gorm@v1.9.16"
 )
 
 func GetGorm(r registry.Registry) (*gorm.DB, error) {
