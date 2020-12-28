@@ -1,4 +1,4 @@
-module github.com/nori-io/interfaces/database/sql/sqlx
+module github.com/nori-io/interfaces/database/sqlx
 
 go 1.15
 
