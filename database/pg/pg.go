@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	PgInterface meta.Interface = "public/sql/PG@v8.0.7"
+	PgInterface meta.Interface = "database/pg/PG@v8.0.7"
 )
 
 func GetPG(r registry.Registry) (*pg.DB, error) {
