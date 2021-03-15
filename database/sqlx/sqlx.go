@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	SqlxInterface meta.Interface = "public/sql/Sqlx@v1.2.0"
+	SqlxInterface meta.Interface = "database/sqlx/Sqlx@v1.2.0"
 )
 
 func GetSqlx(r registry.Registry) (*sqlx.DB, error) {

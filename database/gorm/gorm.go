@@ -1,25 +1,25 @@
 package pg
 
 import (
-	"github.com/go-pg/pg"
+	"github.com/jinzhu/gorm"
 	"github.com/nori-io/common/v4/pkg/domain/meta"
 	"github.com/nori-io/common/v4/pkg/domain/registry"
 	"github.com/nori-io/common/v4/pkg/errors"
 )
 
 const (
-	PgInterface meta.Interface = "public/sql/PG@v8.0.7"
+	GormInterface meta.Interface = "database/gorm/Gorm@v1.9.16"
 )
 
-func GetPG(r registry.Registry) (*pg.DB, error) {
-	instance, err := r.Interface(PgInterface)
+func GetGorm(r registry.Registry) (*gorm.DB, error) {
+	instance, err := r.Interface(GormInterface)
 	if err != nil {
 		return nil, err
 	}
-	i, ok := instance.(*pg.DB)
+	i, ok := instance.(*gorm.DB)
 	if !ok {
 		return nil, errors.InterfaceAssertError{
-			Interface: PgInterface,
+			Interface: GormInterface,
 		}
 	}
 	return i, nil
