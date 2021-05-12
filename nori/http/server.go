@@ -8,7 +8,7 @@ import (
 	"github.com/nori-io/common/v4/pkg/errors"
 )
 
-const HttpInterface meta.Interface = "nori/http/HTTP"
+const HttpInterface meta.Interface = "nori/http/HTTP@0.0.1"
 
 type Http interface {
 	http.Handler
@@ -28,6 +28,7 @@ type Http interface {
 	Post(pattern string, h http.HandlerFunc)
 	Put(pattern string, h http.HandlerFunc)
 	Trace(pattern string, h http.HandlerFunc)
+	Use(middlewares ...func(http.Handler) http.Handler)
 }
 
 func GetHttp(r registry.Registry) (Http, error) {
