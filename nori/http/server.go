@@ -28,7 +28,10 @@ type Http interface {
 	Post(pattern string, h http.HandlerFunc)
 	Put(pattern string, h http.HandlerFunc)
 	Trace(pattern string, h http.HandlerFunc)
+
 	Use(middlewares ...func(http.Handler) http.Handler)
+
+	URLParam(r *http.Request, key string) string
 }
 
 func GetHttp(r registry.Registry) (Http, error) {
