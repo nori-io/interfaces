@@ -2,13 +2,13 @@ package sqlx
 
 import (
 	"github.com/jmoiron/sqlx"
-	"github.com/nori-io/common/v4/pkg/domain/meta"
-	"github.com/nori-io/common/v4/pkg/domain/registry"
-	"github.com/nori-io/common/v4/pkg/errors"
+	"github.com/nori-io/common/v5/pkg/domain/meta"
+	"github.com/nori-io/common/v5/pkg/domain/registry"
+	"github.com/nori-io/common/v5/pkg/errors"
 )
 
 const (
-	SqlxInterface meta.Interface = "database/sqlx/Sqlx@v1.2.0"
+	SqlxInterface meta.Interface = "database/sqlx/Sqlx@v1.3.4"
 )
 
 func GetSqlx(r registry.Registry) (*sqlx.DB, error) {

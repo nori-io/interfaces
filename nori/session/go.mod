@@ -1,5 +1,5 @@
 module github.com/nori-io/interfaces/nori/session
 
-go 1.15
+go 1.16
 
-require github.com/nori-io/common/v4 v4.0.0
+require github.com/nori-io/common/v5 v5.0.0

@@ -1,8 +1,8 @@
 module github.com/nori-io/interfaces/database/gorm
 
-go 1.15
+go 1.16
 
 require (
-	github.com/jinzhu/gorm v1.9.16
-	github.com/nori-io/common/v4 v4.0.0
+	github.com/nori-io/common/v5 v5.0.0
+	gorm.io/gorm v1.21.10
 )

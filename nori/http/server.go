@@ -3,12 +3,12 @@ package http
 import (
 	"net/http"
 
-	"github.com/nori-io/common/v4/pkg/domain/meta"
-	"github.com/nori-io/common/v4/pkg/domain/registry"
-	"github.com/nori-io/common/v4/pkg/errors"
+	"github.com/nori-io/common/v5/pkg/domain/meta"
+	"github.com/nori-io/common/v5/pkg/domain/registry"
+	"github.com/nori-io/common/v5/pkg/errors"
 )
 
-const HttpInterface meta.Interface = "nori/http/HTTP@0.0.1"
+const HttpInterface meta.Interface = "nori/http/HTTP@1.0.0"
 
 type Http interface {
 	http.Handler
@@ -28,7 +28,10 @@ type Http interface {
 	Post(pattern string, h http.HandlerFunc)
 	Put(pattern string, h http.HandlerFunc)
 	Trace(pattern string, h http.HandlerFunc)
+
 	Use(middlewares ...func(http.Handler) http.Handler)
+
+	URLParam(r *http.Request, key string) string
 }
 
 func GetHttp(r registry.Registry) (Http, error) {
