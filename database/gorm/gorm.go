@@ -1,14 +1,14 @@
 package pg
 
 import (
-	"github.com/jinzhu/gorm"
 	"github.com/nori-io/common/v5/pkg/domain/meta"
 	"github.com/nori-io/common/v5/pkg/domain/registry"
 	"github.com/nori-io/common/v5/pkg/errors"
+	"gorm.io/gorm"
 )
 
 const (
-	GormInterface meta.Interface = "database/gorm/Gorm@v1.9.16"
+	GormInterface meta.Interface = "database/gorm/Gorm@v1.21.10"
 )
 
 func GetGorm(r registry.Registry) (*gorm.DB, error) {
