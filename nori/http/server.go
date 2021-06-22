@@ -31,7 +31,7 @@ type Router interface {
 	With(middlewares ...func(http.Handler) http.Handler) Router
 	NotFound(h http.HandlerFunc)
 	MethodNotAllowed(h http.HandlerFunc)
-	URLParam(r *http.Request, key string) string
+	//URLParam(r *http.Request, key string) string
 }
 
 func GetRouter(r registry.Registry) (Router, error) {
