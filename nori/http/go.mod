@@ -1,4 +1,4 @@
-module github.com/nori-io/interfaces/nori/http
+module github.com/nori-io/interfaces/nori/http/v2
 
 go 1.16
 
