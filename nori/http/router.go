@@ -8,7 +8,7 @@ import (
 	"github.com/nori-io/common/v5/pkg/errors"
 )
 
-const RouterInterface meta.Interface = "nori/http/Router@1.0.0"
+const RouterInterface meta.Interface = "nori/http/Router@2.0.0"
 
 type Router interface {
 	http.Handler
