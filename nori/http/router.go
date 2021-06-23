@@ -8,9 +8,9 @@ import (
 	"github.com/nori-io/common/v5/pkg/errors"
 )
 
-const HttpInterface meta.Interface = "nori/http/HTTP@1.0.0"
+const RouterInterface meta.Interface = "nori/http/Router@1.0.0"
 
-type Http interface {
+type Router interface {
 	http.Handler
 
 	Handle(pattern string, h http.Handler)
@@ -18,6 +18,9 @@ type Http interface {
 
 	Method(method, pattern string, h http.Handler)
 	MethodFunc(method, pattern string, h http.HandlerFunc)
+
+	Route(pattern string, fn func(h Router)) Router
+	Mount(pattern string, h http.Handler)
 
 	Connect(pattern string, h http.HandlerFunc)
 	Delete(pattern string, h http.HandlerFunc)
@@ -30,19 +33,23 @@ type Http interface {
 	Trace(pattern string, h http.HandlerFunc)
 
 	Use(middlewares ...func(http.Handler) http.Handler)
+	With(middlewares ...func(http.Handler) http.Handler) Router
+
+	NotFound(h http.HandlerFunc)
+	MethodNotAllowed(h http.HandlerFunc)
 
 	URLParam(r *http.Request, key string) string
 }
 
-func GetHttp(r registry.Registry) (Http, error) {
-	instance, err := r.Interface(HttpInterface)
+func GetRouter(r registry.Registry) (Router, error) {
+	instance, err := r.Interface(RouterInterface)
 	if err != nil {
 		return nil, err
 	}
-	i, ok := instance.(Http)
+	i, ok := instance.(Router)
 	if !ok {
 		return nil, errors.InterfaceAssertError{
-			Interface: HttpInterface,
+			Interface: RouterInterface,
 		}
 	}
 	return i, nil
