@@ -1,4 +1,4 @@
-module github.com/nori-io/interfaces/nori/session
+module github.com/nori-io/interfaces/nori/session/v2
 
 go 1.16
 
